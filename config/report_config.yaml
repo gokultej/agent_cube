@@ -1,0 +1,23 @@
+report:
+  plant: "1000"
+  company_name: "Your Company Name"
+  currency_symbol: "Rs."
+  currency_unit: "Crores"
+  output_path: "./output/"
+  log_path: "./logs/"
+  timezone: "Asia/Kolkata"
+  filename_template: "Weekly_Market_Intelligence_{plant}_{date}.pdf"
+
+thresholds:
+  achievement_critical_pct: 80
+  po_overpriced_alert_pct: 5
+  po_favourable_pct: -3
+  sentiment_bullish_min: 66
+  sentiment_bearish_max: 40
+  vendor_critical_overdue_days: 90
+  vendor_alert_overdue_days: 60
+
+filters:
+  billing_types_invoice: ['F2', 'ZF2', 'ZIN']   # Standard invoices
+  billing_types_exclude: ['RE', 'RK']            # Exclude returns/credits
+  transformer_flag: 'Y'                          # is_transformer = 'Y'
